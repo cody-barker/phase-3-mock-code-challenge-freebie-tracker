@@ -5,8 +5,9 @@ class Company < ActiveRecord::Base
     def give_freebie dev:, item_name:, value:
         Freebie.create(
             item_name: item_name,
-            dev_id: dev.id,
-            value: value
+            dev: dev,
+            value: value,
+            company: self
             )
     end
 
