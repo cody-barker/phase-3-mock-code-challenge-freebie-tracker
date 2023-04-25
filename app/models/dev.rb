@@ -9,8 +9,7 @@ class Dev < ActiveRecord::Base
     end
 
     def give_away dev, freebie
-        
+        freebie.update(dev: dev) unless freebie.dev != self
     end
-
 
 end
